@@ -12,8 +12,9 @@ spring:
   # DB
   datasource:
     initialize: true
-    url: jdbc:mysql://127.0.0.1:3306/moneybook?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: root
+    url: jdbc:mysql://localhost:3306/moneybook?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
+    username: moneybook
+    password: moneybook00
   # JPA
   jpa:
     database: mysql
@@ -39,9 +40,9 @@ server:
 spring:
   profiles: local-db
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/moneybook?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
-    username: root
-    password: root
+    url: jdbc:mysql://localhost:3306/moneybook?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
+    username: moneybook
+    password: moneybook00
   # JPA
   jpa:
     database: mysql
@@ -50,7 +51,7 @@ spring:
       naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
-#        dialect: org.hibernate.dialect.MySQL55Dialect
+        dialect: org.hibernate.dialect.MySQL55Dialect
         hbm2ddl:
           auto: update
         c3p0:
@@ -64,4 +65,4 @@ spring:
 
 # 서버포트
 server:
-  port: 8080
+  port: 8081

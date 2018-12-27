@@ -2,6 +2,7 @@ package com.study.moneybook.repository;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name="user")
@@ -32,4 +33,14 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    public User() {
+
+    }
+
+    public User(String name) {
+        this.name = name;
+    }
+
 }
