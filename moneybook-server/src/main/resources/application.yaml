@@ -1,0 +1,67 @@
+# 기본 Active Profile 정의
+# 변경시는 실행시점에 별도 인자값으로 정의
+# ex) --spring.profiles.active=prod
+# =================================================================================================
+# ============================================== 공통 ==============================================
+# =================================================================================================
+spring:
+  profiles:
+    active: dev
+  jmx:
+    enabled: false
+  # DB
+  datasource:
+    initialize: true
+    url: jdbc:mysql://127.0.0.1:3306/moneybook?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+  # JPA
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate:
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        engine: MyISAM
+        hbm2ddl:
+          auto: update
+        c3p0:
+          timeout: 1800
+          idle_test_period: 100
+
+# 서버포트
+# 서버포트
+server:
+  port: 8081
+
+---
+# 로컬설정
+spring:
+  profiles: local-db
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/moneybook?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
+    username: root
+    password: root
+  # JPA
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate:
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+#        dialect: org.hibernate.dialect.MySQL55Dialect
+        hbm2ddl:
+          auto: update
+        c3p0:
+          timeout: 1800
+          idle_test_period: 100
+#    open-in-view: false
+---
+# prod용
+spring:
+  profiles: prod
+
+# 서버포트
+server:
+  port: 8080
