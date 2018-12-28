@@ -12,4 +12,12 @@ export class LNBComponent extends AbstractComponent implements OnInit, OnDestroy
     super(elementRef, injector);
   }
 
+  ngOnDestroy() {
+
+  }
+
+  ngOnInit() {
+
+  }
+
 }

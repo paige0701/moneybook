@@ -1,8 +1,8 @@
-import {Injector} from "@angular/core";
+import {AfterViewInit, ElementRef, Injector, OnDestroy, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 
 
-export abstract class AbstractComponent {
+export class AbstractComponent implements OnInit, OnDestroy, AfterViewInit {
 
   /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   | Private Variables
@@ -24,12 +24,22 @@ export abstract class AbstractComponent {
   |-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
   protected constructor(
-    protected injector: Injector
-  ) {
-
+    protected elementRef: ElementRef, protected injector: Injector) {
     // Inject
     this.router = injector.get(Router);
     this.activatedRoute = injector.get(ActivatedRoute);
+  }
+
+  ngOnInit() {
+
+  }
+
+  ngAfterViewInit() {
+
+  }
+
+  ngOnDestroy() {
+
   }
 
   /*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

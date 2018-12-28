@@ -1,26 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
-import { AppComponent } from './app.component';
-import { TestService } from "./service/test.service";
-import { HttpClientModule} from "@angular/common/http";
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
-import {TestComponent} from "./component/test.component";
+
+import {AppComponent} from './app.component';
+import {TestService} from "./service/test.service";
+import {LayoutModule} from "./component/layout/layout.module";
+
 
 const routes: Routes = [
-  { path: '', redirectTo: '/api/test', pathMatch: 'full' },
-  { path: 'api/test', component : TestComponent }
+  { path: '', loadChildren: 'app/component/layout/layout.module#LayoutModule' },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    LayoutModule,
     RouterModule.forRoot(
       routes
     )

@@ -20,7 +20,7 @@ export class TestService {
   /** GET heroes from the server */
   getUsers (): Observable<User[]> {
     return this.http.get<User[]>(this.testUrl, httpOptions)
-      .pipe(tap((result) => {ynn
+      .pipe(tap((result) => {
         return result;
         })
       );

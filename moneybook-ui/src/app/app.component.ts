@@ -1,4 +1,4 @@
-import {Component, Injector } from '@angular/core';
+import {Component, ElementRef, Injector} from '@angular/core';
 import {AbstractComponent} from "./component/abstract/abstract.component";
 
 @Component({
@@ -9,8 +9,9 @@ import {AbstractComponent} from "./component/abstract/abstract.component";
 export class AppComponent extends AbstractComponent{
   title = 'app';
 
-  constructor( injector : Injector) {
-    super(injector);
+  constructor(protected elementRef: ElementRef,
+              protected  injector: Injector) {
+    super(elementRef, injector);
   }
 
 }
