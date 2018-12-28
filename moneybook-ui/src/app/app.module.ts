@@ -6,6 +6,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {AppComponent} from './app.component';
 import {TestService} from "./service/test.service";
 import {LayoutModule} from "./component/layout/layout.module";
+import {FormsModule} from "@angular/forms";
 
 
 const routes: Routes = [

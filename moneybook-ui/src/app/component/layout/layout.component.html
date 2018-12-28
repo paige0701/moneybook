@@ -4,8 +4,13 @@
 </div>
 
 <!-- contents -->
-<div style="align-content: center">
+<div>
   This is layout
+  <ul>
+    <li *ngFor="let user of users">
+      {{user.name}}
+    </li>
+  </ul>
   <router-outlet></router-outlet>
 </div>
 <!-- //contents -->

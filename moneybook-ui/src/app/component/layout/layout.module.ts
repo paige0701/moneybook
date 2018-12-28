@@ -16,6 +16,8 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {LayoutComponent} from "./layout.component";
 import {LNBComponent} from "./lnb.component";
+import {FormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
 
 const layoutRoutes: Routes = [
   {
@@ -29,7 +31,9 @@ const layoutRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(layoutRoutes)
+    RouterModule.forChild(layoutRoutes),
+    FormsModule,
+    BrowserModule // ngFor doesn't work ... ?
   ],
   declarations: [
     LayoutComponent,
