@@ -4,10 +4,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import {TestService} from "./service/test.service";
 import {LayoutModule} from "./component/layout/layout.module";
-import {FormsModule} from "@angular/forms";
-
 
 const routes: Routes = [
   { path: '', loadChildren: 'app/component/layout/layout.module#LayoutModule' },
@@ -26,7 +23,7 @@ const routes: Routes = [
     )
   ],
   exports : [RouterModule],
-  providers: [TestService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

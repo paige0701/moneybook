@@ -1,6 +1,7 @@
 import {Component, ElementRef, Injector, OnDestroy, OnInit} from '@angular/core';
 import {AbstractComponent} from "../abstract/abstract.component";
 import {TestService} from "../../service/test.service";
+import {User} from "../../domain/User";
 
 @Component({
   selector: 'app-layout',
@@ -13,8 +14,7 @@ export class LayoutComponent extends AbstractComponent implements OnInit, OnDest
     super(elementRef, injector);
   }
 
-
-  public users;
+  public users : User[];
 
   ngOnInit() {
     super.ngOnInit();

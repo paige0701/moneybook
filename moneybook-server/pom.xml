@@ -69,7 +69,12 @@
             <artifactId>swagger-springmvc</artifactId>
             <version>1.0.2</version>
         </dependency>
-        <!-- //Swagger 관련 -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-properties-migrator</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>

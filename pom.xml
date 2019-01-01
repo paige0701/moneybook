@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>moneybook-server</module>
+		<module>moneybook-ui</module>
 	</modules>
 
 	<description>Demo project for Spring Boot</description>

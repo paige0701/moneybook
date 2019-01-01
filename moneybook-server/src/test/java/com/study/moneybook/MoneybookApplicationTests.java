@@ -1,6 +1,6 @@
 package com.study.moneybook;
 
-import com.study.moneybook.repository.User;
+import com.study.moneybook.repository.UserEntity;
 import com.study.moneybook.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,9 +27,8 @@ public class MoneybookApplicationTests {
 
     @Test
     public void testAddUser() {
-        User user = new User();
-        user.setId("23");
-        user.setName("Paige");
+        UserEntity user = new UserEntity();
+        user.setFirstName("Jenny");
         userRepository.save(user);
     }
 
