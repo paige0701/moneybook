@@ -1,7 +1,6 @@
 package com.study.moneybook.repository;
 
 import com.study.moneybook.domain.PaymentMethod;
-import com.study.moneybook.domain.Type;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -27,6 +26,7 @@ public class RecordEntity extends AbstractEntity {
 
     // org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl 로 하면 column 이름에 - 를 쓸 수 없다
     @Column(name="paymentmethod")
+    @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
     @ManyToOne(targetEntity = UserEntity.class)
@@ -57,4 +57,19 @@ public class RecordEntity extends AbstractEntity {
         this.paymentMethod = paymentMethod;
     }
 
+    public CategoryEntity getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
 }

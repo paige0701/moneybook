@@ -3,8 +3,8 @@ package com.study.moneybook.repository;
 import javax.persistence.*;
 
 @Entity
-@Table()
-public class CategoryEntity extends AbstractEntity {
+@Table(name="category")
+public class CategoryEntity {
 
     @Id
     @Column

@@ -1,6 +1,6 @@
 package com.study.moneybook.domain;
 
-public enum  PaymentMethod {
+public enum PaymentMethod {
     CREDIT,
     DEBIT,
     CASH
