@@ -1,5 +1,5 @@
 import {Component, ElementRef, Injector} from '@angular/core';
-import {AbstractComponent} from "./component/abstract/abstract.component";
+import {AbstractComponent} from "./view/abstract/abstract.component";
 
 @Component({
   selector: 'app-root',

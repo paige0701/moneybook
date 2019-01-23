@@ -4,10 +4,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import {LayoutModule} from "./component/layout/layout.module";
+import {LayoutModule} from "./view/layout/layout.module";
 
 const routes: Routes = [
-  { path: '', loadChildren: 'app/component/layout/layout.module#LayoutModule' },
+  { path: '', loadChildren: 'app/view/layout/layout.module#LayoutModule' },
 ];
 
 @NgModule({

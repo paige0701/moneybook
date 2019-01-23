@@ -1,5 +1,6 @@
 package com.study.moneybook.service;
 
+import com.study.moneybook.repository.CategoryEntity;
 import com.study.moneybook.repository.RecordEntity;
 import com.study.moneybook.repository.RecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,15 @@ public class RecordService {
     @Autowired
     private RecordRepository recordRepository;
 
-    public List<RecordEntity> getRecordByUserAndMonth() {
-        List<RecordEntity> re = recordRepository.findAll();
+    public List<RecordEntity> getRecord(String categoryType) {
+        List<RecordEntity> re;
+
+        if (categoryType != null) {
+            re = recordRepository.findByCategoryType(categoryType);
+        } else {
+            re = recordRepository.findAll();
+        }
+
         return re;
     }
 

@@ -11,36 +11,9 @@ spring:
     enabled: false
   # DB
   datasource:
-    initialize: true
-    url: jdbc:mysql://localhost:3306/moneybook?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
-    username: moneybook
-    password: moneybook00
-  # JPA
-  jpa:
-    database: mysql
-    show-sql: false
-    hibernate:
-      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    properties:
-      hibernate:
-        engine: MyISAM
-        hbm2ddl:
-          auto: update
-        c3p0:
-          timeout: 1800
-          idle_test_period: 100
-
-# 서버포트
-# 서버포트
-server:
-  port: 8081
-
----
-# 로컬설정
-spring:
-  profiles: local-db
-  datasource:
-    url: jdbc:mysql://localhost:3306/moneybook?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT
+    driver-class-name: com.mysql.jdbc.Driver
+    initialization-mode: always
+    url: jdbc:mysql://localhost:3306/moneybook?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
     username: moneybook
     password: moneybook00
   # JPA
@@ -57,7 +30,12 @@ spring:
         c3p0:
           timeout: 1800
           idle_test_period: 100
-#    open-in-view: false
+
+# 서버포트
+# 서버포트
+server:
+  port: 8000
+
 ---
 # prod용
 spring:

@@ -4,14 +4,14 @@ const PROXY_CONFIG = [
       "/api",
       "/oauth"
     ],
-    target: "http://localhost:8081",
+    target: "http://localhost:8000",
     secure: false
   },
   {
     context: [
       "/stomp"
     ],
-    target: "http://localhost:8081",
+    target: "http://localhost:8000",
     secure: false
   }
 ];

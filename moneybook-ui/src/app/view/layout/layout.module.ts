@@ -18,13 +18,14 @@ import {LayoutComponent} from "./layout.component";
 import {LNBComponent} from "./lnb.component";
 import {FormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
+import {HeaderComponent} from "./header.component";
 
 const layoutRoutes: Routes = [
   {
     path: '', component: LayoutComponent,
     children: [
-      // { path: '', redirectTo: 'workspace', pathMatch: 'full' },
-      // { path: 'workspace', loadChildren: 'app/workspace/workspace.module#WorkspaceModule' },
+      { path: '', redirectTo: 'record', pathMatch: 'full' },
+      { path: 'record', loadChildren: 'app/view/record/record.module#RecordModule' },
     ]
   }
 ];
@@ -37,7 +38,8 @@ const layoutRoutes: Routes = [
   ],
   declarations: [
     LayoutComponent,
-    LNBComponent
+    LNBComponent,
+    HeaderComponent
   ],
   providers: [
   ]

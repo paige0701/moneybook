@@ -1,9 +1,6 @@
 package com.study.moneybook.repository;
-import org.hibernate.annotations.Type;
-import org.joda.time.DateTime;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @MappedSuperclass
 public abstract class AbstractEntity {
@@ -14,13 +11,13 @@ public abstract class AbstractEntity {
     protected String createdBy;
 
     @Column(name = "created_time", updatable = false)
-    protected LocalDateTime createdTime;
+    protected String createdTime;
 
     @Column(name = "modified_by")
     protected String modifiedBy;
 
     @Column(name = "modified_time")
-    protected LocalDateTime modifiedTime;
+    protected String modifiedTime;
 
     public String getCreatedBy() {
         return createdBy;
@@ -30,11 +27,11 @@ public abstract class AbstractEntity {
         this.createdBy = createdBy;
     }
 
-    public LocalDateTime getCreatedTime() {
+    public String getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(LocalDateTime createdTime) {
+    public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
 
@@ -46,11 +43,11 @@ public abstract class AbstractEntity {
         this.modifiedBy = modifiedBy;
     }
 
-    public LocalDateTime getModifiedTime() {
+    public String getModifiedTime() {
         return modifiedTime;
     }
 
-    public void setModifiedTime(LocalDateTime modifiedTime) {
+    public void setModifiedTime(String modifiedTime) {
         this.modifiedTime = modifiedTime;
     }
 }

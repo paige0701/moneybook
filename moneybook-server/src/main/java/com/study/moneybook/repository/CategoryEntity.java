@@ -1,5 +1,4 @@
 package com.study.moneybook.repository;
-
 import javax.persistence.*;
 
 @Entity
@@ -7,13 +6,29 @@ import javax.persistence.*;
 public class CategoryEntity {
 
     @Id
-    @Column
+    @Column(name = "id")
     private String id;
 
-    @Column
+    @Column(name="type")
     private String type;
 
-    @Column
+    @Column(name="name")
     private String name;
 
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

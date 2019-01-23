@@ -1,0 +1,20 @@
+record list
+
+<div class="jumbotron">
+  <ul class="list-group">
+    <div class="row" *ngFor="let record of records">
+      <div class="col-sm">
+        {{record.createdTime}}
+      </div>
+      <div class="col-sm">
+        {{record.category?.name}}
+      </div>
+      <div class="col-sm">
+        {{record.category?.type}}
+      </div>
+    </div>
+  </ul>
+</div>
+
+
+
