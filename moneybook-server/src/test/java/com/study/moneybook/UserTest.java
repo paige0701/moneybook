@@ -24,8 +24,8 @@ public class UserTest {
         user.setEmail("paige11@gmail.com");
         user.setFirstName("Jenny");
         user.setLastName("Kim");
-        user.setCreatedTime(new DateTime().toString());
-        user.setModifiedTime(user.getCreatedTime());
+//        user.setCreatedTime(new DateTime().toString());
+//        user.setModifiedTime(user.getCreatedTime());
         userRepository.save(user);
     }
 

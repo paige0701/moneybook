@@ -33,11 +33,11 @@ public class RecordTest {
         RecordEntity re = new RecordEntity();
 
         UserEntity user = ur.findByEmail("cde0701@gmail.com");
-        re.setAmount(30000);
-        re.setCreatedTime(new DateTime().toString());
-        re.setModifiedTime(re.getCreatedTime());
-//        re.setPaymentMethod(PaymentMethod.CREDIT);
+        re.setAmount(50000);
+        re.setCreatedTime(LocalDateTime.now());
+        re.setPaymentMethod(PaymentMethod.CREDIT);
         CategoryEntity cat = cr.findById("I1");
+        re.setModifiedTime(re.getCreatedTime());
         re.setCategory(cat);
         re.setUser(user);
         rr.save(re);

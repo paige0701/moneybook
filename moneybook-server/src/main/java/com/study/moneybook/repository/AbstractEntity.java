@@ -1,6 +1,10 @@
 package com.study.moneybook.repository;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @MappedSuperclass
 public abstract class AbstractEntity {
@@ -11,13 +15,15 @@ public abstract class AbstractEntity {
     protected String createdBy;
 
     @Column(name = "created_time", updatable = false)
-    protected String createdTime;
+    @CreationTimestamp
+    protected LocalDateTime createdTime;
 
     @Column(name = "modified_by")
     protected String modifiedBy;
 
+    @UpdateTimestamp
     @Column(name = "modified_time")
-    protected String modifiedTime;
+    protected LocalDateTime modifiedTime;
 
     public String getCreatedBy() {
         return createdBy;
@@ -27,11 +33,11 @@ public abstract class AbstractEntity {
         this.createdBy = createdBy;
     }
 
-    public String getCreatedTime() {
+    public LocalDateTime getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(String createdTime) {
+    public void setCreatedTime(LocalDateTime createdTime) {
         this.createdTime = createdTime;
     }
 
@@ -43,11 +49,11 @@ public abstract class AbstractEntity {
         this.modifiedBy = modifiedBy;
     }
 
-    public String getModifiedTime() {
+    public LocalDateTime getModifiedTime() {
         return modifiedTime;
     }
 
-    public void setModifiedTime(String modifiedTime) {
+    public void setModifiedTime(LocalDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
     }
 }
